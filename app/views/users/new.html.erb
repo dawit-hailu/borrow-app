@@ -1,0 +1,17 @@
+<body>
+<%= form_for @user do |f| %>
+        <h2>Sign Up</h2>
+                <div>
+                    <%= f.text_field :first_name, placeholder: 'First Name' %>
+                </div>
+                <div class="col-lg-12 form_div">
+                    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+                </div>
+                <div class="col-lg-12 form_div">
+                    <%= f.text_field :email, placeholder: 'Email'  %>
+                </div>
+                <div>
+                    <%= f.submit "Create Account"%>
+                </div>
+<% end %>
+</body>

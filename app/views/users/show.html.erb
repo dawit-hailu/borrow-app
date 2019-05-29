@@ -1,0 +1,8 @@
+<%if current_user%>
+	<h1><%=@user.first_name%></h1>
+	<ul>
+    <% @todos.each do |todo| %>
+      <li><%= todo.description %></li>
+    <% end %>
+    </ul>
+<%end%>

@@ -1,0 +1,9 @@
+<%= form_tag sessions_path do %>
+	<h2>Log In</h2>
+	<div>
+	   <%= text_field_tag :email, params[:email],placeholder: 'email' %>
+	</div>
+	<div class="form_div">
+	   <%= submit_tag "Sign In"%>
+	</div>
+<%end%>
