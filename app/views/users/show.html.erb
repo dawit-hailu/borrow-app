@@ -1,8 +1,8 @@
 <%if current_user%>
 	<h1><%=@user.first_name%></h1>
 	<ul>
-    <% @todos.each do |todo| %>
-      <li><%= todo.description %></li>
+    <% @uploads.each do |upload| %>
+      <li><%= upload.file_name %></li>
     <% end %>
     </ul>
 <%end%>

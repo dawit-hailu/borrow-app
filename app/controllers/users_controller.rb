@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @files = @user.files
+    @uplads = @user.uplads
   end
 
   def user_params
