@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      render 'show'
+      redirect_to user_uploads_path(current_user.id)
     else
       render 'new'
     end

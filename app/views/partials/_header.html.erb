@@ -2,27 +2,32 @@
 	<nav class="navbar navbar-inverse f_color">
 		<div class="container-fluid">
 			<div class="navbar-header ">
+
+			</div>
 				<% if logged_in? %>
 
-				<ul class="nav navbar-nav">
-				  <li ><%= button_to "Profile", user_path(current_user.id), method: "get", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left"  %></li>
-  
+				<ul class="nav navbar-nav navbar-left">
 				  
-				  <li><%= button_to "Logout", session_path(current_user.id), method: "delete", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left" %></li>
+				  <li ><%= button_to "Profile", user_uploads_path(current_user.id), method: "get", :class => 'navbar-link', :class => "btn btn-sm"  %></li>
+				  
+				  <li><%= button_to "Logout", session_path(current_user.id), method: "delete", :class => 'navbar-link', :class => "btn btn-sm" %></li>
+				  
+				   <p class="navbar-text nav navbar-nav navbar-left">Signed in as <a href="#" class="navbar-link"><strong><%= current_user.email %></strong></a></p>
 
-				  
-				   <p class="navbar-text nav navbar-nav navbar-right">Signed in as <a href="#" class="navbar-link"><strong><%= current_user.email %></strong></a></p>
+				</ul>
+			    <ul class="nav navbar-nav navbar-right">
+				   <li><%= button_to "link to state data upload", states_path, method: "get", :class => 'navbar-link', :class => "btn btn-sm" %></li>
 				</ul>
 				<% else %>
 				<ul class="nav navbar-nav">
 				  <li><%= button_to "Sign up", new_user_path, method: "get", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left" %></li>
 
 				  <li><%= button_to "Login", new_session_path, method: "get", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left" %></li>
-				  </ul>
+				</ul>
 				<% end %>
 
 
-			</div>
+			
 		</div>
 	</nav>
 </div>

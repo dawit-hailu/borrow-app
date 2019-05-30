@@ -14,3 +14,20 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  
+  $("button").click(function(){
+    $("p").slideToggle();
+  });
+
+  $.ajax({
+      url: "/states",
+      method: 'get',
+      dataType: 'json',
+      data: {ab: "AB"}
+    })
+    .done(function(response) {
+      console.log(response)
+    })
+
+});

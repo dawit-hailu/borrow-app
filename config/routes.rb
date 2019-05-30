@@ -7,6 +7,16 @@ Rails.application.routes.draw do
 
   resources :uploads
 
+  resources :states do
+    resources :cities
+  end
+
+  resources :cities do
+    resources :counties
+  end
+
+  resources :counties
+
   get 'cities/:state', to: 'application#cities'
 
   get '/register' => 'users#create'

@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+include UploadsHelper
+csv_path = "app/assets/uploaded_files/states.csv"
+text_path = "app/assets/uploaded_files/zips.txt"
+
+#csv parse is in helpers/uploadhelper
+
+csv_parse csv_path
+text_parce text_path
+
+
+

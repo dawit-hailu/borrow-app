@@ -3,8 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # find by downcase email because of validation
-    user = User.find_by_email(params[:email].downcase)
+    user = User.find_by(email: session_params[:email])
     log_in user
     redirect_back_or user
   end
@@ -14,5 +13,7 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 
-  
+  def session_params
+    params.require(:session).permit(:email)
+  end
 end

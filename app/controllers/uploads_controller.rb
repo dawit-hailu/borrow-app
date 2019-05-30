@@ -26,13 +26,13 @@ class UploadsController < ApplicationController
      file_name_generated = save_file(
                 params[:upload][:file].tempfile, 
                 params[:upload][:file].original_filename,
-                @upload.id,
-                current_user.id)
+                current_user.id,
+                @upload.id)
 
      @upload.update(
                 file: params[:upload][:file].tempfile,
                 file_name: file_name_generated,
-                content_type: params[:upload][:file].content_type)
+                file_content_type: params[:upload][:file].content_type)
                 #create a document associated with the item that has just been created
                 render :index
      @upload.save
