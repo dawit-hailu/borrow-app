@@ -1,0 +1,28 @@
+<div>
+	<nav class="navbar navbar-inverse f_color">
+		<div class="container-fluid">
+			<div class="navbar-header ">
+				<% if logged_in? %>
+
+				<ul class="nav navbar-nav">
+				  <li ><%= button_to "Profile", user_path(current_user.id), method: "get", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left"  %></li>
+  
+				  
+				  <li><%= button_to "Logout", session_path(current_user.id), method: "delete", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left" %></li>
+
+				  
+				   <p class="navbar-text nav navbar-nav navbar-right">Signed in as <a href="#" class="navbar-link"><strong><%= current_user.email %></strong></a></p>
+				</ul>
+				<% else %>
+				<ul class="nav navbar-nav">
+				  <li><%= button_to "Sign up", new_user_path, method: "get", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left" %></li>
+
+				  <li><%= button_to "Login", new_session_path, method: "get", :class => 'navbar-link', :class => "btn btn-sm btn-margin-left" %></li>
+				  </ul>
+				<% end %>
+
+
+			</div>
+		</div>
+	</nav>
+</div>

@@ -7,9 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"></script>
   </head>
 
   <body>
+    <%= render 'partials/header' %>
     <%= yield %>
   </body>
 </html>

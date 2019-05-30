@@ -1,7 +1,9 @@
-class CreateDocuments < ActiveRecord::Migration[5.2]
+class CreateUploads < ActiveRecord::Migration[5.2]
   def change
     create_table :documents do |t|
-      t.references :upload, foreign_key: true
+      t.integer :file_id
+      t.string :user_id
+      t.string :file
 
       t.timestamps
     end
