@@ -2,14 +2,14 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :users do
-    resources :documents
+    resources :uploads
   end
 
   get 'cities/:state', to: 'application#cities'
 
   get '/register' => 'users#create'
 
-  get '/upload' => 'documents#new'
+  get '/upload' => 'uploads#new'
 
   get '/login' => 'sessions#new'
 

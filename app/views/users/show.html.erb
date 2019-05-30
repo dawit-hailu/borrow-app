@@ -1,10 +1,10 @@
 
 <div class="container text-center sign_up_form_top">
 	<ul class="nav navbar-nav">
-	  <li ><%= button_to "upload", new_user_document_path(current_user.id), method: "get", :class => 'link', :class => "btn btn-sm btn-margin-left"  %></li>
+	  <li ><%= button_to "upload", new_user_upload_path(current_user.id), method: "get", :class => 'link', :class => "btn btn-sm btn-margin-left"  %></li>
 
 	  
-	  <li><%= button_to "view uploaded documents", user_documents_path(current_user.id), method: "get", :class => 'link', :class => "btn btn-sm btn-margin-left" %></li>
+	  <li><%= button_to "view uploaded documents", user_uploads_path(current_user.id), method: "get", :class => 'link', :class => "btn btn-sm btn-margin-left" %></li>
 	</ul>
 
 </div>

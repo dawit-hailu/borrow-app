@@ -9,7 +9,7 @@ class UploadsController < ApplicationController
     
   end
 
-  def show
+  def index
   	@user = current_user
   	@uploads = @user.uploads
   end
@@ -19,35 +19,20 @@ class UploadsController < ApplicationController
 
    if @upload.save
      #iterate through each of the files
-     params[:upload][:document].each do |file|
-         @upload.documents.create!(:document => file)
-         #create a document associated with the item that has just been created
-
-     end
-     render :show
+     @upload.update(
+      file: params[:upload][:file].tempfile,
+      file_name: params[:upload][:file].original_filename,
+      content_type: params[:upload][:file].content_type)
+      #create a document associated with the item that has just been created
+     render :index
    else
      render json: @upload.errors, status: :unprocessable_entity
    end
 
   end
 
-  # def patch
-  #    @document = Document.new(document_params)
-
-  #  if @document.save
-  #    #iterate through each of the files
-  #    params[:document][:document_data].each do |file|
-  #        @document.documents.create!(:document => file)
-  #        #create a document associated with the item that has just been created
-  #    end
-  #    render :show
-  #  else
-  #    render json: @document.errors, status: :unprocessable_entity
-  #  end
-
-  # end
   def upload_params
-  	params.require(:upload).permit(:name, :description , :document, :original_filename, :temp_file) # Add :picture as a permitted parameter
+  	params.require(:upload).permit(:name, :description , :document, :original_filename, :temp_file) 
   end
 
 

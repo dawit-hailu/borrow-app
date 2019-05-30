@@ -1,4 +1,4 @@
-<%= form_for @upload, url: user_documents_path, html: { multipart: true } do |form| %>
-  <%= form.file_field :document %>
+<%= form_for @upload, url: user_uploads_path, html: { multipart: true } do |form| %>
+  <%= form.file_field :file %>
   <%= form.submit %>
 <% end %>
