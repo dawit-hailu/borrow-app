@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+    ActionController::Parameters.permit_all_parameters = true
   end
 
   def show
