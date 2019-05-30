@@ -32,9 +32,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_222650) do
   end
 
   create_table "uploads", force: :cascade do |t|
-    t.integer "file_id"
     t.string "user_id"
-    t.string "file"
     t.string "content_type"
     t.string "file_name"
     t.datetime "created_at", null: false

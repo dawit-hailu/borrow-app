@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :uploads
   end
 
+  resources :uploads
+
   get 'cities/:state', to: 'application#cities'
 
   get '/register' => 'users#create'

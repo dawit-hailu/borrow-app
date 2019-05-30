@@ -1,3 +1,21 @@
-<% current_user.uploads.each do |upload| %>
-	<%= upload.file_name %>
-<% end %>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">File Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">download link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% current_user.uploads.each do |upload| %>
+		<tr>
+	    
+	      <td><%= upload.file_name %></td>
+	      <td><%= upload.file_content_type %></td>
+	      <td><%= link_to "download", user_upload_path(current_user.id,upload.id), method: "get", :class => 'link'  %></td>
+    	</tr>
+   
+	<% end %>
+  </tbody>
+</table>
+
